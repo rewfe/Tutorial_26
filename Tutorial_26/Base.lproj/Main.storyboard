@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,86 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2H-o2-kW3">
+                                <rect key="frame" x="263" y="562" width="75" height="30"/>
+                                <state key="normal" title="Start again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startWalkthrough:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zmd-nB-F2K"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="y2H-o2-kW3" secondAttribute="bottom" constant="8" id="1aO-h5-a45"/>
+                            <constraint firstItem="y2H-o2-kW3" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="EGL-gN-KTK"/>
+                            <constraint firstItem="y2H-o2-kW3" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="IxD-Ga-X4p"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="y2H-o2-kW3" secondAttribute="bottom" constant="8" id="nPX-qd-Peh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="y2H-o2-kW3" secondAttribute="bottom" constant="13" id="txS-pt-ncF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1aO-h5-a45"/>
+                                <exclude reference="txS-pt-ncF"/>
+                                <exclude reference="IxD-Ga-X4p"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="281" y="279"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="qRq-cP-YBr">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="awK-77-I3u" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gP0-ze-6W7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-8"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="Gpd-lN-hPs">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="En0-Qe-tZN" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yEg-XX-ZWl"/>
+                        <viewControllerLayoutGuide type="bottom" id="rps-Je-wwr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xy5-hS-fIE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="srU-lL-ubb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhK-dZ-e8N">
+                                <rect key="frame" x="286" y="41" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="srU-lL-ubb" firstAttribute="leading" secondItem="xy5-hS-fIE" secondAttribute="leading" id="21x-Kc-pH4"/>
+                            <constraint firstAttribute="centerX" secondItem="srU-lL-ubb" secondAttribute="centerX" id="BRQ-dZ-9Nv"/>
+                            <constraint firstItem="srU-lL-ubb" firstAttribute="bottom" secondItem="rps-Je-wwr" secondAttribute="top" id="Juu-Zk-eaR"/>
+                            <constraint firstAttribute="centerY" secondItem="srU-lL-ubb" secondAttribute="centerY" id="cJA-Vy-qa2"/>
+                            <constraint firstAttribute="centerX" secondItem="OhK-dZ-e8N" secondAttribute="centerX" constant="-7" id="fRw-Vp-BUW"/>
+                            <constraint firstAttribute="centerY" secondItem="OhK-dZ-e8N" secondAttribute="centerY" constant="248.5" id="itd-Bz-55V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="srU-lL-ubb" id="i91-nr-wqe"/>
+                        <outlet property="titleLabel" destination="OhK-dZ-e8N" id="EyL-hX-aCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1os-QO-7oT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="724"/>
         </scene>
     </scenes>
 </document>
